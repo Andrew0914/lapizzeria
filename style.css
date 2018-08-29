@@ -26,7 +26,7 @@ html{
     margin: 0 auto;
 }
 /*********** ENCABEZADO ***********/
-header.encabezado_sitio{
+header.encabezado-sitio{
     border-bottom:  1px solid #c1c1c1;
 }
 
@@ -44,8 +44,25 @@ img.logotipo{
     }
 }
 
-@media only screen and (min-width:992){
+@media only screen and (min-width:992px){
     div.logo{
         text-align: center;
     } 
+}
+
+@media only screen and (min-width:768px){
+
+    header.encabezado-sitio div.contenedor{
+        position: relative;
+    }
+
+    .informacion-encabezado{
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    div.direccion p{
+        text-align: right;
+    }
 }

@@ -10,7 +10,7 @@
         ?>
     </head>
     <body>
-        <header class="encabezado_sitio">
+        <header class="encabezado-sitio">
             <!-- CONTENEDOR -->
             <div class="contenedor">
                 <!-- LOGO -->
