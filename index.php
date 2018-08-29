@@ -10,6 +10,6 @@
     ?>
 </head>
 <body>
-    <h1>HOLA</h1>
+    <h1>Hola desde index.php</h1>
 </body>
 </html>
