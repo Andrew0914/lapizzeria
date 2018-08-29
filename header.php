@@ -23,3 +23,18 @@
             </div>
             <!-- /CONTENEDOR -->
         </header>
+        <nav class="menu-sitio">
+            <div class="contenedor navegacion">
+                <?php
+                    // argumentos para desplegar el menu
+                    $args= array(
+                        "theme_location"=> "header-menu",
+                        "container"=> "nav",
+                        "container-class"=>"menu-sitio"
+                    );
+
+                    // imprime el menu
+                    wp_nav_menu($args);
+                ?>
+            </div>
+        </nav>
