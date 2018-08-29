@@ -16,8 +16,19 @@
         wp_enqueue_style('mis_estilos');
     }
 
+    /**
+     * Carga los navs o seccioens de menu, no los menus fisicos esos son desde el admin
+     */
+    function lapizzeria_menus(){
+        register_nav_menus(array(
+            'header-menu' => __('Header Menu','lapizzeria'),
+            'social-menu' => __('Social Menu', 'lapizzeria')
+        ));
+    }
+
     /*************************
     ******** ACCIONES ********
     *************************/
     add_action('wp_enqueue_scripts','lapizzeria_styles');
+    add_action('init','lapizzeria_menus');
 ?>
