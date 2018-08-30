@@ -175,5 +175,38 @@ nav.menu-sitio ul li:hover{
     nav.menu-sitio ul li{
         display: table-cell;
     }
-    
+}
+
+/********* MENU RESPONSIVE **********/
+
+nav.menu-sitio{
+    display: none;
+}
+
+@media only screen and (min-width:768px){
+    nav.menu-sitio{
+        display: block;
+    }
+}
+
+@media only screen and (max-width:768px){
+    .mobile-menu a{
+        background-color: #a61206;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        height: 40px;
+        width: 100%;
+        display: block;
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+        text-decoration: none;
+    }
+}
+
+@media only screen and (min-width:768px){
+    .mobile-menu a{
+        display: none;
+    }
 }

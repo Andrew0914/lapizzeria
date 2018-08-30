@@ -51,17 +51,22 @@
             <!-- /CONTENEDOR -->
         </header>
         <!-- MENU PRINCIPAL-->
-        <div class="contenedor navegacion">
-            <?php
-                // argumentos para desplegar el menu
-                $args= array(
-                    "theme_location"=> "header-menu",
-                    "container"=> "nav",
-                    "container_class"=>"menu-sitio"
-                );
+        <div class="menu-principal">
+            <div class="mobile-menu">
+                <a href="#" class="mobile"><i class="fa fa-bars" aria-hidden="true"></i>Menu</a>
+            </div>
+            <div class="contenedor navegacion">
+                <?php
+                    // argumentos para desplegar el menu
+                    $args= array(
+                        "theme_location"=> "header-menu",
+                        "container"=> "nav",
+                        "container_class"=>"menu-sitio"
+                    );
 
-                // imprime el menu
-                wp_nav_menu($args);
-            ?>
+                    // imprime el menu
+                    wp_nav_menu($args);
+                ?>
+            </div>
         </div>
         <!-- /MENU PRINCIPAL-->
