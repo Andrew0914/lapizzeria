@@ -1,1 +1,4 @@
-alert("HOLA MUNDO WP");
+$ = jQuery.noConflict();
+$(document).ready(function(){
+    alert("Documento listo");
+});
