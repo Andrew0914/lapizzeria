@@ -16,7 +16,7 @@ html{
     box-sizing: border-box;
 }
 
-*, *:before,*:after{
+*, *::before,*::after{
     box-sizing: inherit;
 }
 
@@ -25,9 +25,11 @@ html{
     width: 100%;
     margin: 0 auto;
 }
+
 /*********** ENCABEZADO ***********/
 header.encabezado-sitio{
-    border-bottom:  1px solid #c1c1c1;
+    border-bottom:  2px solid #c1c1c1;
+    padding-bottom: 30px;
 }
 
 div.logo{
@@ -65,4 +67,113 @@ img.logotipo{
     div.direccion p{
         text-align: right;
     }
+}
+
+div.direccion{
+    display: block;
+    clear: both;
+    padding-top: 10px;
+}
+
+div.direccion p{
+    margin:0;
+    text-align: center;
+    font-size: 14px;
+}
+
+@media only screen and (min-width:768px){
+    div.direccion p{
+        text-align: right;
+    }
+}
+
+
+/****  MENU REDES SOCIALES **********/
+
+nav.sociales ul{
+    text-align: center;
+    padding: 0;
+    list-style: none;
+}
+
+@media only screen and (min-width:768px){
+    nav.sociales ul{
+        float: right;
+    }
+}
+
+nav.sociales ul li{
+    position: relative;
+    display: inline-block;
+}
+
+nav.sociales ul li a::before{
+    font-family: "FontAwesome";
+    display: inline-block;
+    vertical-align: top;
+    color: black;
+    font-size: 30px;
+    content: '\f08e';
+    padding: 0 5px;
+    -webkit-font-smoothing: antialiased;
+    -mos-font-smoothing: antialiased;
+}
+
+nav.sociales ul li a[href*="facebook.com"]::before{
+    content: '\f230';
+}
+
+nav.sociales ul li a[href*="twitter.com"]::before{
+    content: '\f081';
+}
+
+nav.sociales ul li a[href*="instagram.com"]::before{
+    content: '\f16d';
+}
+
+nav.sociales ul li a[href*="pinterest.com"]::before{
+    content: '\f0d3';
+}
+
+nav.sociales ul li a[href*="youtube.com"]::before{
+    content: '\f16a';
+}
+
+.sr-text{
+    display:none;
+}
+
+/********** MENU PRINCIPAL ***********/
+
+nav.menu-sitio ul {
+    list-style: none;
+    display: table;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+nav.menu-sitio ul li a{
+    text-align: center;
+    padding: 20px 0;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color:black;
+}
+
+nav.menu-sitio ul li.current_page_item a{
+    border-bottom: 8px solid #a61206;
+}
+
+nav.menu-sitio ul li:hover{
+    background-color: #f19f30;
+}
+
+@media only screen and (min-width:768px){
+    nav.menu-sitio ul li{
+        display: table-cell;
+    }
+    
 }

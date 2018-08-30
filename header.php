@@ -29,8 +29,8 @@
                             $args= array(
                                 "theme_location"=> "social-menu",
                                 "container"=> "nav",
-                                "container-id" => "menu-social",
-                                "container-class"=>"menu-social",
+                                "container_id" => "sociales",
+                                "container_class"=>"sociales",
                                 "link_before"=> "<span class='sr-text'>",
                                 "link_after"=> "</span>"
                             );
@@ -51,19 +51,17 @@
             <!-- /CONTENEDOR -->
         </header>
         <!-- MENU PRINCIPAL-->
-        <nav class="menu-sitio">
-            <div class="contenedor navegacion">
-                <?php
-                    // argumentos para desplegar el menu
-                    $args= array(
-                        "theme_location"=> "header-menu",
-                        "container"=> "nav",
-                        "container-class"=>"menu-sitio"
-                    );
+        <div class="contenedor navegacion">
+            <?php
+                // argumentos para desplegar el menu
+                $args= array(
+                    "theme_location"=> "header-menu",
+                    "container"=> "nav",
+                    "container_class"=>"menu-sitio"
+                );
 
-                    // imprime el menu
-                    wp_nav_menu($args);
-                ?>
-            </div>
-        </nav>
+                // imprime el menu
+                wp_nav_menu($args);
+            ?>
+        </div>
         <!-- /MENU PRINCIPAL-->
