@@ -19,5 +19,5 @@
         </div>
 
     <?php } ?>
-    <!-- /LOOP WORDPRESS
+    <!-- /LOOP WORDPRESS -->
 <?php get_footer(); ?>
