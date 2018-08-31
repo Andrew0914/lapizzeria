@@ -4,10 +4,16 @@
         while(have_posts()){
     ?>  
         <?php the_post(); ?>
-        <?php the_post_thumbnail("medium"); ?>
-        <?php the_title("<h1>" , "</h1>"); ?>
+        <div class="hero">
+            <div class="contenido-hero">
+                <div class="texto-hero">
+                    <?php the_title("<h1>" , "</h1>"); ?>
+                </div>
+            </div>
+        </div>
+
         <div class="principal contenedor">
-            <main>
+            <main class="texto-centrado contenido-paginas">
                 <?php the_content(); ?>
             </main>
         </div>

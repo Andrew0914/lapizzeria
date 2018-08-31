@@ -26,6 +26,10 @@ html{
     margin: 0 auto;
 }
 
+.texto-centrado{
+    text-align: center;
+}
+
 /*********** ENCABEZADO ***********/
 header.encabezado-sitio{
     border-bottom:  2px solid #c1c1c1;
@@ -209,4 +213,22 @@ nav.menu-sitio{
     .mobile-menu a{
         display: none;
     }
+}
+
+/******* TEMPLATES PAGINAS ********/
+div.principal{
+    padding: 60px;
+    background-color: #FFF;
+    position: relative;
+}
+
+@media only screen and (min-width:768px){
+    div.principal{
+        margin-top: -90px;
+    }
+}
+
+.contenido-paginas p{
+    font-size: 18px;
+    line-height: 40px;
 }
