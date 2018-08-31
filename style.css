@@ -289,7 +289,7 @@ div.hero .contenido-hero{
     z-index: 2;
 }
 
-@media only screen and (min-width:768){
+@media only screen and (min-width:768px){
     div.texto-hero{
         width: 80%;
         margin: 0 auto;
@@ -297,7 +297,7 @@ div.hero .contenido-hero{
 }
 
 
-@media only screen and (max-width:768){
+@media only screen and (max-width:992px){
     div.texto-hero{
         width:60%;
     }
@@ -341,4 +341,26 @@ footer p{
 
 footer .copyright{
     margin-top: 20px;
+}
+/********** CAJAS **************/
+.informacion-cajas{
+    display: grid;
+}
+
+@media only screen and (min-width:768px){
+    .informacion-cajas{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+.informacion-cajas .caja{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+@media only screen and (min-width:768px){
+    .informacion-cajas .caja{
+        grid-template-columns: unset;
+        grid-template-rows: 1fr 1fr;
+    }
 }

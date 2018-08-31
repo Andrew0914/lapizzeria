@@ -40,6 +40,7 @@
      */
     function lapizzeria_setup(){
         add_theme_support("post-thumbnails");
+        add_image_size("nosotros",400 , 291, true);
     }
 
     /*************************
