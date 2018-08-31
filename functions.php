@@ -32,10 +32,18 @@
             'social-menu' => __('Social Menu', 'lapizzeria')
         ));
     }
+    
+    /**
+     * Habilita el soporte para imagenes destacadas
+     */
+    function lapizzeria_setup(){
+        add_theme_support("post-thumbnails");
+    }
 
     /*************************
     ******** ACCIONES ********
     *************************/
     add_action('wp_enqueue_scripts','lapizzeria_styles');
     add_action('init','lapizzeria_menus');
+    add_action('after_setup_theme','lapizzeria_setup');
 ?>
