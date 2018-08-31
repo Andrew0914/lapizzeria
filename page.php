@@ -4,7 +4,7 @@
         while(have_posts()){
     ?>  
         <?php the_post(); ?>
-        <div class="hero">
+        <div class="hero" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);">
             <div class="contenido-hero">
                 <div class="texto-hero">
                     <?php the_title("<h1>" , "</h1>"); ?>
@@ -17,6 +17,7 @@
                 <?php the_content(); ?>
             </main>
         </div>
+
     <?php } ?>
     <!-- /LOOP WORDPRESS
 <?php get_footer(); ?>
