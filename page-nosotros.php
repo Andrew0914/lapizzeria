@@ -20,5 +20,14 @@
 
     <?php } ?>
     <!-- /LOOP WORDPRESS -->
-    <h1>AQUI VAN A IR  LAS CAJAS</h1>
+    <!-- CAJAS DE INFORMACION-->
+    <div class="informacion-cajas contenedor">
+        <div class="caja">
+            <img src="<?php the_field('imagen_1')?>">
+            <div class="contenido-caja">
+                <?php the_field('descripcion_1');?>
+            </div>
+        </div>
+    </div>
+    <!-- /CAJAS DE INFORMACION-->
 <?php get_footer(); ?>
