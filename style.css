@@ -401,6 +401,7 @@ footer .copyright{
                         "titulo" 
                         "texto" 
                         ".";
+    padding: 25px;
 }
 .contenido-caja > *{
     align-self: center;
@@ -416,6 +417,7 @@ footer .copyright{
 
 .contenido-caja p{
     grid-area: texto;
+    font-size: 14px;
 }
 
 @media only screen and (min-width:768px){
