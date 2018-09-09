@@ -41,6 +41,7 @@
     function lapizzeria_setup(){
         add_theme_support("post-thumbnails");
         add_image_size("nosotros",437 , 291, true);
+        add_image_size("especialidades",768 , 515, true);
     }
 
     /**
