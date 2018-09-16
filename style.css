@@ -204,7 +204,7 @@ nav.sociales ul li a[href*="youtube.com"]::before{
     content: '\f16a';
 }
 
-.sr-text{
+.sr-text,.screen-reader-text{
     display:none;
 }
 
@@ -589,4 +589,62 @@ p.autor i{
 div.contenido-entrada p{
     margin-bottom: 0;
     line-height: 24px;
+}
+
+/************ SIDEBAR **********/
+aside.sidebar{
+    margin-top: 3px;
+}
+
+form.searchform{
+    position: relative;
+}
+
+form.searchform #searchsubmit{
+    position: absolute;
+    top:0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #a61206;
+    text-indent: -9999px;
+    cursor: pointer;
+    background-image: url('img/buscador.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    border:none;
+}
+
+form.searchform input{
+    width: 100%;
+    padding: 10px;
+}
+
+aside .widget{
+    margin-bottom: 20px;
+}
+
+aside .widget h3{
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.widget ul{
+    list-style: none;
+}
+
+.widget ul li{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.widget ul li a{
+    text-decoration: none;
+    color:#212121;
+    transition: all 0.3s ease;
+}
+
+.widget ul li a:hover{
+    color: #f19f30;
 }
