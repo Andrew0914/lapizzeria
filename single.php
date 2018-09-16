@@ -18,6 +18,7 @@
             </main>
         </div>
         <div class="contenedor comentarios">
+            <?php comment_form(); ?>
         </div>
     <?php } ?>
     <!-- /LOOP WORDPRESS -->
