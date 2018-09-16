@@ -64,6 +64,12 @@ img{
     height: auto;
 }
 
+.clear,.clear::after{
+    content:'';
+    clear: both;
+    display:block;
+}
+
 /*********** ENCABEZADO ***********/
 header.encabezado-sitio{
     border-bottom:  2px solid #c1c1c1;
