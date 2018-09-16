@@ -70,6 +70,27 @@ img{
     display:block;
 }
 
+.boton{
+    font-family: 'Open Sans',sans-serif;
+    font-size: 16px;
+    width: auto;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 80px;
+    margin-top: 20px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.5s ease;
+}
+
+.boton.rojo{
+    background-color: #a61206;
+}
+
+.boton:hover{
+    background-color: #f19f30;
+}
+
 /*********** ENCABEZADO ***********/
 header.encabezado-sitio{
     border-bottom:  2px solid #c1c1c1;
@@ -463,7 +484,7 @@ div.texto-especialidad h4 span{
     float: right;
     font-size: 30px;
     color: #f19f30;
-    font-family: 'Open Sans' sans-serif;
+    font-family: 'Open Sans' ,sans-serif;
 }
 
 div.texto-especialidad p{
@@ -507,4 +528,65 @@ div.texto-especialidad p{
     .columnas2-3{
         width: 66.6%;
     }
+}
+
+/************** BLOG *****************/
+article.entrada-blog{
+    margin-top: 30px;
+}
+
+header.informacion-entrada{
+    margin-top: 20px;
+}
+
+header.informacion-entrada div.fecha{
+    background-color: #f19f30;
+    float: left;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    padding-top: 5px;
+    margin-right: 20px;
+}
+
+header.informacion-entrada div.fecha{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+header.informacion-entrada div.fecha span{
+    font-size: 16px;
+    display: block;
+    clear: both;
+    text-transform: uppercase;
+}
+
+header.informacion-entrada .titulo-entrada{
+    float: right;
+    width:calc(100% - 90px);
+}
+
+header.informacion-entrada h2{
+    font-size: 24px;
+    margin:0;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+header.informacion-entrada p.autor{
+    text-transform: uppercase;
+    color:#505050;
+    margin-top: 10px;
+    font-family: 'Raleway', sans-serif;
+}
+
+p.autor i{
+    font-size: 24px;
+    color: #f19f30;
+}
+
+div.contenido-entrada p{
+    margin-bottom: 0;
+    line-height: 24px;
 }
