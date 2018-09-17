@@ -715,3 +715,29 @@ ul.lista-comentarios li.comment ul.children li{
     background-color: white;
     margin-top: 20px;
 }
+
+/****** PAGINACION POSTS*****/
+div.paginacion{  
+    margin-top: 20px;
+    width: auto;
+    display: inline-block;
+}
+
+div.paginacion a,div.paginacion span{
+    text-decoration: none;
+    color: #a61206;
+    margin: 0 5px;
+    background-color: #e1e1e1;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+div.paginacion .current{
+    color: #210021;
+    font-weight: bold;
+    border: 1px solid #210021;
+}
+
+div.paginacion .anteriores,div.paginacion .siguientes{
+    display: inline-block;
+}

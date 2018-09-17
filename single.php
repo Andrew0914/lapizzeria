@@ -38,5 +38,6 @@
             </ul>
         </div>
     <?php } ?>
+    
     <!-- /LOOP WORDPRESS -->
 <?php get_footer(); ?>
