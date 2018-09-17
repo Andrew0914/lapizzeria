@@ -55,8 +55,8 @@
                 <?php } ?>
                 <!-- /LOOP WORDPRESS BLOG -->
                 <div class="paginacion">
-                    <?php //echo paginate_links(); ?>
-                    <div class="anteriores">
+                    <?php echo paginate_links(); ?>
+                    <!--<div class="anteriores">
                         <?php 
                             $labelPrevious = "<i class='fa fa-arrow-left' aria-hidden='true'></i>Anteriores ";
                             next_posts_link($labelPrevious); 
@@ -67,7 +67,7 @@
                             $labelNext = "Nuevos <i class='fa fa-arrow-right' aria-hidden='true'></i>";
                             previous_posts_link($labelNext); 
                         ?>
-                    </div>
+                    </div>-->
                 </div>
             </main>
             <!-- WIDGETS SIDEBAR-->
