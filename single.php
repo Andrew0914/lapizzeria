@@ -17,8 +17,25 @@
                 <?php the_content(); ?>
             </main>
         </div>
+        <!-- CAJA DE COMENTATIOS -->
         <div class="contenedor comentarios">
             <?php comment_form(); ?>
+        </div>
+        <!-- LISTA DE COMENTARIOS -->
+        <div class="contenedor">
+            <ul class="lista-comentarios">
+                <?php 
+                    $comentarios = get_comments(array(
+                        'post_id'=>$post->ID,
+                        'status'=>'approve'
+                    ));
+
+                    wp_list_comments(array(
+                        'per_page'=>10,
+                        'reverse_top_level'=> false
+                    ),$comentarios);
+                ?>
+            </ul>
         </div>
     <?php } ?>
     <!-- /LOOP WORDPRESS -->
