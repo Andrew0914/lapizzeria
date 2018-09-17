@@ -650,7 +650,7 @@ aside .widget h3{
     color: #f19f30;
 }
 
-/****** COMENTARIOS *****/
+/******** COMENTARIOS ********/
 div.comentarios h3{
     font-weight: 700;
     text-align: center;
@@ -688,4 +688,30 @@ div.comentarios input[type='submit']:hover{
 
 p.logged-in-as a{
     color: #a61206;
+}
+
+ul.lista-comentarios, ul.lista-comentarios ul{
+    list-style: none;
+}
+
+ul.lista-comentarios li.comment{
+    background-color: #e1e1e1;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+ul.lista-comentarios li.comment cite{
+    font-size: 16px;
+    font-weight: bold;
+    color: #a61206;
+}
+
+ul.lista-comentarios li.comment .comment-author{
+    margin-top: 20px;
+}
+
+ul.lista-comentarios li.comment ul.children li{
+    background-color: white;
+    margin-top: 20px;
 }
