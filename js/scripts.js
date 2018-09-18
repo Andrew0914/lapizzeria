@@ -1,19 +1,28 @@
-$ = jQuery.noConflict();
-$(document).ready(function(){
+jQ = jQuery.noConflict();
+jQ(document).ready(function(){
 
     // accion menu mobil
-    $(".mobile-menu a").click(function(){
-       $("nav.menu-sitio").toggle("slow");
+    jQ(".mobile-menu a").click(function(){
+       jQ("nav.menu-sitio").toggle("slow");
     });
 
     // reaccionando al cambio de tamaño de pantalla
     var breakpoint = 768;
-    $(window).resize(function(){
-        if($(document).width() >= breakpoint){
-            $("nav.menu-sitio").show();
+    jQ(window).resize(function(){
+        if(jQ(document).width() >= breakpoint){
+            jQ("nav.menu-sitio").show();
         }else{
-            $("nav.menu-sitio").hide();
+            jQ("nav.menu-sitio").hide();
         }
     });
+
+    // GALERIA FLUID BOX
+    jQ('.gallery a').each(function() {
+        jQ(this).attr({'data-fluidbox': ''});
+    });
+    
+    if(jQ('[data-fluidbox]').length > 0 ) {
+        jQ('[data-fluidbox]').fluidbox();
+    }
     
 });
