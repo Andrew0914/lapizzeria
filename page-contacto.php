@@ -32,6 +32,7 @@
                         <textarea name="mensaje" placeholder="Mensaje"></textarea>
                     </div>
                     <input type="submit" class="boton" name="enviar"/>
+                    <input type="hidden" name="oculto" value="1"/>
                 </form>
             </main>
         </div>

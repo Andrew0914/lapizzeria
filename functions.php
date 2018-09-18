@@ -1,6 +1,8 @@
 <?php
+    // Tablas personalizadas
     require get_template_directory().'/inc/database.php';
-
+    //Funciones para las reservaciones
+    require get_template_directory().'/inc/reservaciones.php';
     /*************************
     ******** FUNCIONES ******
     *************************/
