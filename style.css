@@ -741,3 +741,22 @@ div.paginacion .current{
 div.paginacion .anteriores,div.paginacion .siguientes{
     display: inline-block;
 }
+
+/********* GALERIA ***************/
+
+div#gallery-1 .gallery-item{
+    width: 100%;
+    margin: 0;
+    padding: 4px;
+}
+
+@media only screen and (min-width:768px){
+    div#gallery-1 .gallery-item{
+        width:25%;
+        margin: 0;
+    }
+}
+
+div#gallery-1 .gallery-item img{
+    border: none;
+}
