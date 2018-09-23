@@ -3,6 +3,8 @@
     require get_template_directory().'/inc/database.php';
     //Funciones para las reservaciones
     require get_template_directory().'/inc/reservaciones.php';
+    // Opciones para el tema
+    require get_template_directory().'/inc/opciones.php';
     /*************************
     ******** FUNCIONES ******
     *************************/
