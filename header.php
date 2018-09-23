@@ -41,8 +41,8 @@
                     <!-- /REDES SOCIALES-->
                     <!--  DIRECCION -->
                     <div class="direccion">
-                        <p>Avenida Siempre Viva 18, Colonia Azul,145000</p>
-                        <p>Tel: 55 664 4404</p>
+                        <p><?php echo esc_html(get_option("lapizzeria_direccion")); ?></p>
+                        <p><?php echo "Tel. " . esc_html(get_option("lapizzeria_telefono")); ?></p>
                     </div>
                     <!--  /DIRECCION -->
                 </div>
