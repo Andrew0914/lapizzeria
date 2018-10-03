@@ -45,6 +45,24 @@ h4{
     font-size: 24px;
 }
 
+@media only screen and (max-width:767px){
+    h1{
+        font-size: 38px;
+    }
+    
+    h2{ 
+        font-size: 30px;
+    }
+    
+    h3{
+        font-size: 18px;
+    }
+    
+    h4{
+        font-size: 14px;
+    }
+}
+
 .contenedor{
     max-width: 1100PX;
     width: 100%;
@@ -76,7 +94,7 @@ img{
     width: auto;
     border-radius: 8px;
     color: white;
-    padding: 15px 80px;
+    padding: 15px 30px;
     margin-top: 20px;
     display: inline-block;
     text-decoration: none;
@@ -845,3 +863,74 @@ form.reserva-contacto input[type='submit']{
         font-size: 16px;
     }
 }
+
+div.contenido-especialidad{
+    position: relative;
+    overflow: hidden;
+    display: table;
+}
+
+div.informacion-platillo{
+    position: absolute;
+    top: 100%;
+    left:0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(241, 159, 48, 0.85);
+    color: white;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+div.contenido-especialidad:hover div.informacion-platillo{
+    top:0;
+    opacity: 1;
+}
+
+div.informacion-platillo p.precio{
+    font-size: 42px;
+    font-weight: bold;
+}
+
+div.informacion-platillo p{
+    line-height: 25px;
+}
+@media only screen and (max-width:767px){
+    
+    .home .principal{
+        padding: 30px;
+    }
+
+    div.texto-hero {
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    div.contenido-especialidad{
+        overflow: visible;
+        display: block;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+
+    div.contenido-especialiad img{
+        width:100%;
+    }
+
+    div.informacion-platillo{
+        background-color: rgb(241, 159, 48);
+        padding: 15px;
+        opacity: 1;
+        position: relative;
+    }
+
+    div.contenido-especialidad:hover div.informacion-platillo{
+        top:100%;
+        opacity: 1;
+    }
+}
+

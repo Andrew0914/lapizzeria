@@ -18,7 +18,7 @@
     <!-- /LOOP WORDPRESS -->
     <div class="principal contenedor">
         <main class="contenedor-grid">
-            <h2 class="rojo">Nuestas Especialidades</h2>
+            <h2 class="rojo texto-centrado">Nuestas Especialidades</h2>
             <!-- PREVIEW especialidades-->
             <?php 
                 $args = [
@@ -34,14 +34,13 @@
                     <div class="especialidad columnas1-3">
                         <div class="contenido-especialidad">
                             <?php the_post_thumbnail("especialidades-portrait");?>
-                            <div class="informacionp-platillo">
+                            <div class="informacion-platillo">
                                 <?php the_title("<h3>","</h3>"); ?>
                                 <p> <?php the_content(); ?></p> 
-                                <p class="precio"> <?php the_field('precio'); ?></p>
+                                <p class="precio">$<?php the_field('precio'); ?></p>
                                 <a href="<?php the_permalink(); ?>" class="boton">Leer más</a>
                             </div>
                         </div>
-                        
                     </div>  
             <?php } wp_reset_postdata(); ?>
         </main>
