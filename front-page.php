@@ -14,13 +14,37 @@
                 </div>
             </div>
         </div>
-
-        <div class="principal contenedor">
-            <main class="texto-centrado contenido-paginas">
-                
-            </main>
-        </div>
-
     <?php } ?>
     <!-- /LOOP WORDPRESS -->
+    <div class="principal contenedor">
+        <main class="contenedor-grid">
+            <h2 class="rojo">Nuestas Especialidades</h2>
+            <!-- PREVIEW especialidades-->
+            <?php 
+                $args = [
+                    'posts_per_page'=>3,
+                    'orderby'=>'rand',
+                    'post_type'=>'especialidades',
+                    'category_name'=>'pizzas'
+                ];
+                $especialidades = new  WP_Query($args);
+                while($especialidades->have_posts()){
+                    $especialidades->the_post();
+            ?>
+                    <div class="especialidad columnas1-3">
+                        <div class="contenido-especialidad">
+                            <?php the_post_thumbnail("especialidades-portrait");?>
+                            <div class="informacionp-platillo">
+                                <?php the_title("<h3>","</h3>"); ?>
+                                <p> <?php the_content(); ?></p> 
+                                <p class="precio"> <?php the_field('precio'); ?></p>
+                                <a href="<?php the_permalink(); ?>" class="boton">Leer más</a>
+                            </div>
+                        </div>
+                        
+                    </div>  
+            <?php } wp_reset_postdata(); ?>
+        </main>
+    </div>
+    
 <?php get_footer(); ?>
