@@ -89,6 +89,14 @@ img{
     background-color: #a61206;
 }
 
+.boton.naranja{
+    background-color: #f19f30;
+}
+
+.boton.naranja:hover{
+    background-color: #a61206;
+}
+
 .boton:hover{
     background-color: #f19f30;
 }
@@ -814,4 +822,22 @@ form.reserva-contacto::-ms-input-placeholder{
 form.reserva-contacto input[type='submit']{
     display: block;
     margin: 0 auto;
+}
+
+/******* FRONY PAGE ********/
+
+.home div.hero{
+    height: 650px;
+}
+
+@media only screen and (min-width:768px){
+    .home .texto-hero{
+        width: 650px;
+        margin:0 auto;
+    }
+
+    .home .texto-hero p{
+        line-height: 30px;
+        font-size: 16px;
+    }
 }

@@ -10,7 +10,7 @@
                     <h1><?php echo get_option('blogdescription'); ?></h1>
                     <?php the_content(); ?>
                     <?php $page = get_page_by_title("Sobre Nosotros");?>
-                    <a href="<?php echo get_permalink($page->ID); ?>" class="boton">Saber más</a>
+                    <a href="<?php echo get_permalink($page->ID); ?>" class="boton naranja">Saber más</a>
                 </div>
             </div>
         </div>
