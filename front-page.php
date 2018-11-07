@@ -75,4 +75,18 @@
             echo get_post_gallery($galeriaPage->ID);
         ?>
     </section>
+    <!-- SECCION DE UBICACION Y CONTACTO -->
+    <section class="ubicacion-reservacion">
+        <div class="contenedor">
+            <div class="contenedor-grid">
+                <div class="columnas2-4">
+                    MAPA AQUI
+                </div>
+                <div class="columnas2-4">
+                    <!-- forma de llamar por el template part con un guion -->
+                    <?php get_template_part("templates/formulario", "contacto"); ?>
+                </div>
+            </div>
+        </div>
+    </section>
 <?php get_footer(); ?>

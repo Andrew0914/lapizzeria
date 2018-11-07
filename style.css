@@ -982,3 +982,21 @@ section.ingredientes .imagen {
 section.ingredientes .imagen img {
     max-width: 80%;
 }
+
+section.ubicacion-reservacion {
+    margin-top: 50px;
+    background-image: url(img/bg-ingredientes.jpg);
+}
+
+section.ubicacion-reservacion .reserva-contacto {
+    margin-left: initial;
+    color: white;
+    padding: 20px;
+}
+
+section.ubicacion-reservacion .reserva-contacto input:not([type='submit']),
+section.ubicacion-reservacion .reserva-contacto textarea {
+    background-color: transparent;
+    border: 2px solid #f0f0ff;
+    color: white;
+}
