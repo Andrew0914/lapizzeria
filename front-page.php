@@ -45,5 +45,23 @@
             <?php } wp_reset_postdata(); ?>
         </main>
     </div>
-    
+    <section class="ingredientes">
+        <div class="contenedor">
+            <div class="contenedor-grid">
+            <?php
+                while(have_posts()){
+                    the_post();
+            ?>  
+                <div class="columnas2-4">
+                    <?php the_field('contenido'); ?>
+                    <?php $url = get_page_by_title('Sobre Nosotros'); ?>
+                    <a href="<?php echo get_permalink($url->ID); ?>" class="boton naranja">Saber más</a>
+                </div>
+                <div class="columnas2-4">
+                    <img src="<?php the_field('imagen')?>" />
+                </div>
+            <?php } ?>
+            </div>
+        </div>
+    </section>
 <?php get_footer(); ?>
