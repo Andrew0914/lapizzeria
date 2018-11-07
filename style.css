@@ -952,3 +952,33 @@ div.informacion-platillo p {
         opacity: 1;
     }
 }
+
+
+/* SECTION INGREDIENTES FRONT*/
+
+section.ingredientes {
+    background-image: url(img/bg-ingredientes.jpg);
+    margin-top: 50px;
+    padding: 80px 10px;
+    color: white;
+}
+
+section.ingredientes h3 {
+    font-size: 40px;
+    line-height: 60px;
+}
+
+section.ingredientes p {
+    line-height: 30px;
+    font-size: 20px;
+}
+
+section.ingredientes .imagen {
+    padding-top: 30px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+section.ingredientes .imagen img {
+    max-width: 80%;
+}
