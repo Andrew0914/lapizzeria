@@ -45,6 +45,7 @@
             <?php } wp_reset_postdata(); ?>
         </main>
     </div>
+    <!-- SECCION CON CUSTOM FIELDS-->
     <section class="ingredientes">
         <div class="contenedor">
             <div class="contenedor-grid">
@@ -63,5 +64,15 @@
             <?php } ?>
             </div>
         </div>
+    </section>
+    <!-- SECCION PARA LA GALERIA -->
+    <section class="contenedor">
+        <h1 class="texto-rojo texto-centrado">
+            Galería de Imágenes
+        </h1>
+        <?php 
+            $galeriaPage = get_page_by_title('Galeria'); 
+            echo get_post_gallery($galeriaPage->ID);
+        ?>
     </section>
 <?php get_footer(); ?>
