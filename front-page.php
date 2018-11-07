@@ -80,7 +80,7 @@
         <div class="contenedor">
             <div class="contenedor-grid">
                 <div class="columnas2-4">
-                    MAPA AQUI
+                    <div id="map"></div>
                 </div>
                 <div class="columnas2-4">
                     <!-- forma de llamar por el template part con un guion -->

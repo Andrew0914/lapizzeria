@@ -26,13 +26,24 @@
         wp_enqueue_style("fluidboxcss");
         wp_enqueue_style('mis_estilos');
         // REGISTRAR LOS  JS
+        wp_register_script('maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBT4tnqURQZdLG7nbLYNKxCO3P0Vyl_jFI&callback=initMap',array(), '',true);
         wp_register_script('fluidboxjs',get_template_directory_uri() . '/js/jquery.fluidbox.min.js', array(), '2.0.5',true);
         wp_register_script('scripts',get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0',true);
         //LLAMAR LOS JS
+        wp_enqueue_script("maps");
         wp_enqueue_script("jquery");
         wp_enqueue_script("fluidboxjs");
         wp_enqueue_script("scripts");
     }
+
+    function agregar_async_defer($tag,$handle){
+        echo $tag;
+        if('maps' !== $handle)
+            return $tag;
+        return str_replace(' src', ' async="async" defer="defer" src',$tag);
+    }
+
+    
 
     /**
      * Carga los navs o seccioens de menu, no los menus fisicos esos son desde el admin
@@ -119,4 +130,7 @@
     add_action('after_setup_theme','lapizzeria_setup');
     add_action( 'init', 'lapizzeria_especialidades' );
     add_action('widgets_init','lapizzeria_widgets');
+    
+    /* FILTROS*/
+    add_filter('script_loader_tag', 'agregar_async_defer',10,2);
 ?>
