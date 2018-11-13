@@ -32,8 +32,17 @@
      * Genera el formulario de opciones para modificarlas
      */
     function lapizzeria_opciones(){
+        $active_tab = '';
+        if(isset($_GET['tab'])){
+            $active_tab = $_GET['tab'];
+        }
         echo "<div class='wrap'>";
             echo "<h1>La Pizzeria Ajustes</h1>";
+            // tabs de contenido
+            echo "<h2 class='nav-tab-wrapper'>";
+                echo "<a href='?page=lapizzeria_ajustes&tab=direccion' class='nav-tab ". ($active_tab == "direccion" ? "nav-tab-active": "") . "'>Direccion</a>";
+                echo "<a href='?page=lapizzeria_ajustes&tab=maps' class='nav-tab ". ($active_tab == "maps" ? "nav-tab-active": "") . "'>Ubicacion Mapa</a>";
+            echo "</h2>";
             echo "<form method='post' action='options.php'>";
                 // indicamos a WP el grupo de opciones que va a usar para este formulario
                 settings_fields("lapizzeria_opciones_grupo");
