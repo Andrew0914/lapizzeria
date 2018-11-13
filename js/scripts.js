@@ -7,7 +7,19 @@ function initMap() {
     });
 }
 
+// variable sin conflicto jquery
 jQ = jQuery.noConflict();
+
+function ajustaMapa(altura) {
+    var mapa = jQ("#map");
+    var ubicacionSeccion = jQ(".ubicacion-reservacion");
+    if (altura <= 0) {
+        mapa.css("height", ubicacionSeccion.height());
+    } else {
+        mapa.css("height", altura);
+    }
+}
+
 jQ(document).ready(function() {
 
     // accion menu mobil
@@ -32,6 +44,13 @@ jQ(document).ready(function() {
 
     if (jQ('[data-fluidbox]').length > 0) {
         jQ('[data-fluidbox]').fluidbox();
+    }
+
+    // AJUSTES PARA EL MAPA
+    if (jQ(document).width() >= breakpoint) {
+        ajustaMapa(0);
+    } else {
+        ajustaMapa(300);
     }
 
 });

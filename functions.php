@@ -26,7 +26,7 @@
         wp_enqueue_style("fluidboxcss");
         wp_enqueue_style('mis_estilos');
         // REGISTRAR LOS  JS
-        wp_register_script('maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBT4tnqURQZdLG7nbLYNKxCO3P0Vyl_jFI&callback=initMap',array(), '',true);
+        wp_register_script('maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB8n0ohtTuLLiepP-5Ov04ckyCWq3cbXOY&callback=initMap',array(), '',true);
         wp_register_script('fluidboxjs',get_template_directory_uri() . '/js/jquery.fluidbox.min.js', array(), '2.0.5',true);
         wp_register_script('scripts',get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0',true);
         //LLAMAR LOS JS

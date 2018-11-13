@@ -1000,8 +1000,3 @@ section.ubicacion-reservacion .reserva-contacto textarea {
     border: 2px solid #f0f0ff;
     color: white;
 }
-
-#map {
-    height: 500px;
-    margin-top: 20px;
-}
