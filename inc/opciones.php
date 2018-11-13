@@ -32,7 +32,7 @@
      * Genera el formulario de opciones para modificarlas
      */
     function lapizzeria_opciones(){
-        $active_tab = '';
+        $active_tab = 'direccion';
         if(isset($_GET['tab'])){
             $active_tab = $_GET['tab'];
         }
@@ -42,50 +42,52 @@
             echo "<h2 class='nav-tab-wrapper'>";
                 echo "<a href='?page=lapizzeria_ajustes&tab=direccion' class='nav-tab ". ($active_tab == "direccion" ? "nav-tab-active": "") . "'>Direccion</a>";
                 echo "<a href='?page=lapizzeria_ajustes&tab=maps' class='nav-tab ". ($active_tab == "maps" ? "nav-tab-active": "") . "'>Ubicacion Mapa</a>";
-            echo "</h2>";
+            echo "</h2><br>";
             echo "<form method='post' action='options.php'>";
-                // indicamos a WP el grupo de opciones que va a usar para este formulario
-                settings_fields("lapizzeria_opciones_grupo");
-                // despues de indicar, le dicemosque las use
-                do_settings_sections("lapizzeria_opciones_grupo");
-                echo "<table ='table-form'>";
-                    // direccion
-                    echo "<tr valing='top'>";
-                        echo "<th scope='row' align='left'>Direccion </th>";
-                        echo "<td> <input type='text' name='lapizzeria_direccion' value='".esc_attr(get_option("lapizzeria_direccion"))."'></td>";
-                    echo "</tr>";
-                    // telefono
-                    echo "<tr valing='top'>";
-                        echo "<th scope='row' align='left'>Telfono </th>";
-                        echo "<td> <input type='text' name='lapizzeria_telefono' value='".esc_attr(get_option("lapizzeria_telefono"))."'></td>";
-                    echo "</tr>";
-                echo "</table>";
-                // opciones del mapa
-                settings_fields("lapizzeria_opciones_gmap");
-                do_settings_sections("lapizzeria_opciones_gmap");
-                echo "<h2>Ajustes ubicacion Mapa</h2>";
-                echo "<table ='table-form'>";
-                    // latitud
-                    echo "<tr valing='top'>";
-                        echo "<th scope='row' align='left'>Latiud </th>";
-                        echo "<td> <input type='text' name='lapizzeria_latitud' value='".esc_attr(get_option("lapizzeria_latitud"))."'></td>";
-                    echo "</tr>";
-                    // longitud
-                    echo "<tr valing='top'>";
-                        echo "<th scope='row' align='left'>Longitud </th>";
-                        echo "<td> <input type='text' name='lapizzeria_longitud' value='".esc_attr(get_option("lapizzeria_longitud"))."'></td>";
-                    echo "</tr>";
-                    // zoom
-                    echo "<tr valing='top'>";
-                        echo "<th scope='row' align='left'>Zoom </th>";
-                        echo "<td> <input type='number' name='lapizzeria_zoom' value='".esc_attr(get_option("lapizzeria_zoom"))."'></td>";
-                    echo "</tr>";
-                    // apikey
-                    echo "<tr valing='top'>";
-                        echo "<th scope='row' align='left'>ApiKey</th>";
-                        echo "<td> <input type='text' name='lapizzeria_apikey' value='".esc_attr(get_option("lapizzeria_apikey"))."'></td>";
-                    echo "</tr>";
-                echo "</table>";
+                if($active_tab == 'direccion'){
+                    // indicamos a WP el grupo de opciones que va a usar para este formulario
+                    settings_fields("lapizzeria_opciones_grupo");
+                    // despues de indicar, le dicemosque las use
+                    do_settings_sections("lapizzeria_opciones_grupo");
+                    echo "<table ='table-form'>";
+                        // direccion
+                        echo "<tr valing='top'>";
+                            echo "<th scope='row' align='left'>Direccion </th>";
+                            echo "<td> <input type='text' name='lapizzeria_direccion' value='".esc_attr(get_option("lapizzeria_direccion"))."'></td>";
+                        echo "</tr>";
+                        // telefono
+                        echo "<tr valing='top'>";
+                            echo "<th scope='row' align='left'>Telfono </th>";
+                            echo "<td> <input type='text' name='lapizzeria_telefono' value='".esc_attr(get_option("lapizzeria_telefono"))."'></td>";
+                        echo "</tr>";
+                    echo "</table>";
+                }else if($active_tab == 'maps'){
+                    // opciones del mapa
+                    settings_fields("lapizzeria_opciones_gmap");
+                    do_settings_sections("lapizzeria_opciones_gmap");
+                    echo "<table ='table-form'>";
+                        // latitud
+                        echo "<tr valing='top'>";
+                            echo "<th scope='row' align='left'>Latiud </th>";
+                            echo "<td> <input type='text' name='lapizzeria_latitud' value='".esc_attr(get_option("lapizzeria_latitud"))."'></td>";
+                        echo "</tr>";
+                        // longitud
+                        echo "<tr valing='top'>";
+                            echo "<th scope='row' align='left'>Longitud </th>";
+                            echo "<td> <input type='text' name='lapizzeria_longitud' value='".esc_attr(get_option("lapizzeria_longitud"))."'></td>";
+                        echo "</tr>";
+                        // zoom
+                        echo "<tr valing='top'>";
+                            echo "<th scope='row' align='left'>Zoom </th>";
+                            echo "<td> <input type='number' name='lapizzeria_zoom' value='".esc_attr(get_option("lapizzeria_zoom"))."'></td>";
+                        echo "</tr>";
+                        // apikey
+                        echo "<tr valing='top'>";
+                            echo "<th scope='row' align='left'>ApiKey</th>";
+                            echo "<td> <input type='text' name='lapizzeria_apikey' value='".esc_attr(get_option("lapizzeria_apikey"))."'></td>";
+                        echo "</tr>";
+                    echo "</table>";
+                }
                 // generamos el boton se submit
                 submit_button();
             echo "</form>";

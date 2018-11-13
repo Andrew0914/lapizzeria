@@ -26,7 +26,8 @@
         wp_enqueue_style("fluidboxcss");
         wp_enqueue_style('mis_estilos');
         // REGISTRAR LOS  JS
-        wp_register_script('maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB8n0ohtTuLLiepP-5Ov04ckyCWq3cbXOY&callback=initMap',array(), '',true);
+        $google_maps_apikey = esc_html(get_option('lapizzeria_apikey'));
+        wp_register_script('maps', 'https://maps.googleapis.com/maps/api/js?key='.$google_maps_apikey.'&callback=initMap',array(), '',true);
         wp_register_script('fluidboxjs',get_template_directory_uri() . '/js/jquery.fluidbox.min.js', array(), '2.0.5',true);
         wp_register_script('scripts',get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0',true);
         //LLAMAR LOS JS
@@ -34,6 +35,17 @@
         wp_enqueue_script("jquery");
         wp_enqueue_script("fluidboxjs");
         wp_enqueue_script("scripts");
+
+        // FROM PHP TO JS
+        wp_localize_script(
+            'scripts',
+            'opciones',
+            array(
+                'latitud'=> get_option('lapizzeria_latitud'),
+                'longitud' => get_option('lapizzeria_longitud'),
+                'zoom'=> get_option('lapizzeria_zoom')
+            )
+        );
     }
 
     function agregar_async_defer($tag,$handle){
