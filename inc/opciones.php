@@ -18,8 +18,14 @@
      * Registra las opciones del menu de opciones para que WP las entienda
      */
     function lapizzeria_registrar_opciones(){
+        // opciones de la direccion
         register_setting("lapizzeria_opciones_grupo", "lapizzeria_direccion");
         register_setting("lapizzeria_opciones_grupo", "lapizzeria_telefono");
+        // opciones para la ubicacion en maps
+        register_setting("lapizzeria_opciones_gmap", "lapizzeria_latitud");
+        register_setting("lapizzeria_opciones_gmap", "lapizzeria_longitud");
+        register_setting("lapizzeria_opciones_gmap", "lapizzeria_zoom");
+        register_setting("lapizzeria_opciones_gmap", "lapizzeria_apikey");
     }
 
     /**lapizzeria_direccion
@@ -34,13 +40,41 @@
                 // despues de indicar, le dicemosque las use
                 do_settings_sections("lapizzeria_opciones_grupo");
                 echo "<table ='table-form'>";
+                    // direccion
                     echo "<tr valing='top'>";
-                        echo "<th scope='row'>Direccion </th>";
+                        echo "<th scope='row' align='left'>Direccion </th>";
                         echo "<td> <input type='text' name='lapizzeria_direccion' value='".esc_attr(get_option("lapizzeria_direccion"))."'></td>";
                     echo "</tr>";
+                    // telefono
                     echo "<tr valing='top'>";
-                        echo "<th scope='row'>Telfono </th>";
+                        echo "<th scope='row' align='left'>Telfono </th>";
                         echo "<td> <input type='text' name='lapizzeria_telefono' value='".esc_attr(get_option("lapizzeria_telefono"))."'></td>";
+                    echo "</tr>";
+                echo "</table>";
+                // opciones del mapa
+                settings_fields("lapizzeria_opciones_gmap");
+                do_settings_sections("lapizzeria_opciones_gmap");
+                echo "<h2>Ajustes ubicacion Mapa</h2>";
+                echo "<table ='table-form'>";
+                    // latitud
+                    echo "<tr valing='top'>";
+                        echo "<th scope='row' align='left'>Latiud </th>";
+                        echo "<td> <input type='text' name='lapizzeria_latitud' value='".esc_attr(get_option("lapizzeria_latitud"))."'></td>";
+                    echo "</tr>";
+                    // longitud
+                    echo "<tr valing='top'>";
+                        echo "<th scope='row' align='left'>Longitud </th>";
+                        echo "<td> <input type='text' name='lapizzeria_longitud' value='".esc_attr(get_option("lapizzeria_longitud"))."'></td>";
+                    echo "</tr>";
+                    // zoom
+                    echo "<tr valing='top'>";
+                        echo "<th scope='row' align='left'>Zoom </th>";
+                        echo "<td> <input type='number' name='lapizzeria_zoom' value='".esc_attr(get_option("lapizzeria_zoom"))."'></td>";
+                    echo "</tr>";
+                    // apikey
+                    echo "<tr valing='top'>";
+                        echo "<th scope='row' align='left'>ApiKey</th>";
+                        echo "<td> <input type='text' name='lapizzeria_apikey' value='".esc_attr(get_option("lapizzeria_apikey"))."'></td>";
                     echo "</tr>";
                 echo "</table>";
                 // generamos el boton se submit
