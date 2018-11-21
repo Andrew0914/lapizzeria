@@ -4,9 +4,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- SOPORTE PARA APP WEB IOS -->
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-title" content="La pizzeria">
         <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/img/contacto_bg.jpg">
+        <!-- SOPORTE PARA APP WEB ANDROID -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#f19f30">
+        <meta name="application-name" content="La pizzeria">
+        <link rel="-icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/img/buscador.jpg">
+        
         <title>La Pizzeria</title>
         <?php
             wp_head();
