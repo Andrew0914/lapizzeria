@@ -145,4 +145,281 @@
     
     /* FILTROS*/
     add_filter('script_loader_tag', 'agregar_async_defer',10,2);
+
+    /***************************
+     ** ADVANCE CUSTOM FIELDS **
+     **************************/
+    // requiere estas dos primeras lineas para integralos los custom fields
+     define('ACF_LITE' , true);
+     include_once 'advanced-custom-fields/acf.php';
+    // el siguiente codigo se obtiene al exportar los grupos de CF desde le plugin de WP
+    // se debe tambien mover la carpeta del plugin a la raiz del tema o plantilla
+     if( function_exists('acf_add_local_field_group') ):
+        acf_add_local_field_group(array(
+            'key' => 'group_5ba6da7aeb7fa',
+            'title' => 'Especialidades',
+            'fields' => array(
+                array(
+                    'key' => 'field_5b8a09965ce0a',
+                    'label' => 'Precio',
+                    'name' => 'precio',
+                    'type' => 'text',
+                    'instructions' => 'Añade un precio al producto o especialidad',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'formatting' => 'html',
+                    'maxlength' => '',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'especialidades',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'seamless',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => array(
+            ),
+            'active' => 1,
+            'description' => '',
+        ));
+        
+        acf_add_local_field_group(array(
+            'key' => 'group_5be312e935536',
+            'title' => 'Inicio',
+            'fields' => array(
+                array(
+                    'key' => 'field_5be3131521b25',
+                    'label' => 'Contenido',
+                    'name' => 'contenido',
+                    'type' => 'wysiwyg',
+                    'instructions' => 'Agregue la descripcion',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'tabs' => 'all',
+                    'toolbar' => 'full',
+                    'media_upload' => 1,
+                    'delay' => 0,
+                ),
+                array(
+                    'key' => 'field_5be3135421b26',
+                    'label' => 'Imagen',
+                    'name' => 'imagen',
+                    'type' => 'image',
+                    'instructions' => 'Agregue la imagen',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'return_format' => 'url',
+                    'preview_size' => 'thumbnail',
+                    'library' => 'all',
+                    'min_width' => '',
+                    'min_height' => '',
+                    'min_size' => '',
+                    'max_width' => '',
+                    'max_height' => '',
+                    'max_size' => '',
+                    'mime_types' => '',
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'page',
+                        'operator' => '==',
+                        'value' => '21',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => 1,
+            'description' => '',
+        ));
+        
+        acf_add_local_field_group(array(
+            'key' => 'group_5ba6da7b21dc3',
+            'title' => 'Sobre Nosotros',
+            'fields' => array(
+                array(
+                    'key' => 'field_5b899356bff0c',
+                    'label' => 'imagen 1',
+                    'name' => 'imagen_1',
+                    'type' => 'image',
+                    'instructions' => 'Agrega la imagen 1 de la cuadricula',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'preview_size' => 'thumbnail',
+                    'library' => 'all',
+                    'return_format' => 'id',
+                    'min_width' => 0,
+                    'min_height' => 0,
+                    'min_size' => 0,
+                    'max_width' => 0,
+                    'max_height' => 0,
+                    'max_size' => 0,
+                    'mime_types' => '',
+                ),
+                array(
+                    'key' => 'field_5b8993c5bff10',
+                    'label' => 'Descripcion 1',
+                    'name' => 'descripcion_1',
+                    'type' => 'wysiwyg',
+                    'instructions' => 'Escribe la descripcion de la imagen 1',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'toolbar' => 'full',
+                    'media_upload' => 1,
+                    'tabs' => 'all',
+                    'delay' => 0,
+                ),
+                array(
+                    'key' => 'field_5b8993a5bff0e',
+                    'label' => 'imagen 2',
+                    'name' => 'imagen_2',
+                    'type' => 'image',
+                    'instructions' => 'Agrega la imagen 2 de la cuadricula',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'preview_size' => 'thumbnail',
+                    'library' => 'all',
+                    'return_format' => 'id',
+                    'min_width' => 0,
+                    'min_height' => 0,
+                    'min_size' => 0,
+                    'max_width' => 0,
+                    'max_height' => 0,
+                    'max_size' => 0,
+                    'mime_types' => '',
+                ),
+                array(
+                    'key' => 'field_5b8993e7bff11',
+                    'label' => 'Descripcion 2',
+                    'name' => 'descripcion_2',
+                    'type' => 'wysiwyg',
+                    'instructions' => 'Escribe la descripcion de la imagen 2',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'toolbar' => 'full',
+                    'media_upload' => 1,
+                    'tabs' => 'all',
+                    'delay' => 0,
+                ),
+                array(
+                    'key' => 'field_5b8993babff0f',
+                    'label' => 'imagen 3',
+                    'name' => 'imagen_3',
+                    'type' => 'image',
+                    'instructions' => 'Agrega la imagen 3 de la cuadricula',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'preview_size' => 'thumbnail',
+                    'library' => 'all',
+                    'return_format' => 'id',
+                    'min_width' => 0,
+                    'min_height' => 0,
+                    'min_size' => 0,
+                    'max_width' => 0,
+                    'max_height' => 0,
+                    'max_size' => 0,
+                    'mime_types' => '',
+                ),
+                array(
+                    'key' => 'field_5b8993f4bff12',
+                    'label' => 'Descripcion 3',
+                    'name' => 'descripcion_3',
+                    'type' => 'wysiwyg',
+                    'instructions' => 'Escribe la descripcion de la imagen 3',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'toolbar' => 'full',
+                    'media_upload' => 1,
+                    'tabs' => 'all',
+                    'delay' => 0,
+                ),
+            ),
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'page',
+                        'operator' => '==',
+                        'value' => '10',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'seamless',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => array(
+            ),
+            'active' => 1,
+            'description' => '',
+        ));
+        
+        endif;
 ?>
