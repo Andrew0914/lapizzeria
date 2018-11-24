@@ -5,7 +5,7 @@
         <input type="text"  name="nombre" placeholder="Nombre">
     </div>
     <div class="campo">
-        <input type="datetime-local"  name="fecha" placeholder="Fecha">
+        <input type="date"  name="fecha" placeholder="Fecha">
     </div>
     <div class="campo">
         <input type="email"  name="email" placeholder="Email">

@@ -18,29 +18,22 @@
         wp_register_style('fontawesome',get_template_directory_uri() . '/css/font-awesome.min.css',array('normalize'), '4.7.0');
         wp_register_style("googlefonts", "https://fonts.googleapis.com/css?family=Mukta|Open+Sans|Raleway",array(), '1.0.0');
         wp_register_style("fluidboxcss", get_template_directory_uri() ."/css/fluidbox.min.css",array('normalize'), '2.0.5');
-        wp_register_style("datetime-local-polyfill-css", get_template_directory_uri() ."/css/datetime-local-polyfill.css",array(), '1.0');
         wp_register_style('mis_estilos',get_template_directory_uri() . '/style.css',array('normalize'), '1.0');
         //LLAMAR LOS CSS
         wp_enqueue_style('normalize');
         wp_enqueue_style('fontawesome');
         wp_enqueue_style("googlefonts");
         wp_enqueue_style("fluidboxcss");
-        wp_enqueue_style('datetime-local-polyfill-css');
         wp_enqueue_style('mis_estilos');
         // REGISTRAR LOS  JS
         $google_maps_apikey = esc_html(get_option('lapizzeria_apikey'));
         wp_register_script('maps', 'https://maps.googleapis.com/maps/api/js?key='.$google_maps_apikey.'&callback=initMap',array(), '',true);
         wp_register_script('fluidboxjs',get_template_directory_uri() . '/js/jquery.fluidbox.min.js', array(), '2.0.5',true);
-        wp_register_script('datetime-local-polyfill-js',get_template_directory_uri() . '/js/datetime-local-polyfill.min.js', array(), '1.0',true);
-        wp_register_script('modernizer', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js', array(), '2.8.3',true);
         wp_register_script('scripts',get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0',true);
         //LLAMAR LOS JS
         wp_enqueue_script("maps");
         wp_enqueue_script("jquery");
-        wp_enqueue_script("jquery-ui-core");
         wp_enqueue_script("fluidboxjs");
-        wp_enqueue_script("modernizer");
-        wp_enqueue_script("datetime-local-polyfill-js");
         wp_enqueue_script("scripts");
 
         // FROM PHP TO JS
@@ -56,13 +49,10 @@
     }
 
     function agregar_async_defer($tag,$handle){
-        echo $tag;
         if('maps' !== $handle)
             return $tag;
         return str_replace(' src', ' async="async" defer="defer" src',$tag);
     }
-
-    
 
     /**
      * Carga los navs o seccioens de menu, no los menus fisicos esos son desde el admin
@@ -86,6 +76,15 @@
         update_option('thumbnail_size_h',164);
     }
 
+    function themename_custom_logo_setup() {
+        $defaults = array(
+            'height'      => 220,
+            'width'       => 200
+        );
+        add_theme_support( 'custom-logo', $defaults );
+    }
+    add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+    
     /**
      * Agrega un custom post field, en el menu del wp admin
      */
@@ -147,6 +146,7 @@
     add_action('wp_enqueue_scripts','lapizzeria_styles');
     add_action('init','lapizzeria_menus');
     add_action('after_setup_theme','lapizzeria_setup');
+    //add_action('after_setup_theme','lapizzeria_custom_logo');
     add_action( 'init', 'lapizzeria_especialidades' );
     add_action('widgets_init','lapizzeria_widgets');
     
