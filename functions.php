@@ -18,22 +18,29 @@
         wp_register_style('fontawesome',get_template_directory_uri() . '/css/font-awesome.min.css',array('normalize'), '4.7.0');
         wp_register_style("googlefonts", "https://fonts.googleapis.com/css?family=Mukta|Open+Sans|Raleway",array(), '1.0.0');
         wp_register_style("fluidboxcss", get_template_directory_uri() ."/css/fluidbox.min.css",array('normalize'), '2.0.5');
+        wp_register_style("datetime-local-polyfill-css", get_template_directory_uri() ."/css/datetime-local-polyfill.css",array(), '1.0');
         wp_register_style('mis_estilos',get_template_directory_uri() . '/style.css',array('normalize'), '1.0');
         //LLAMAR LOS CSS
         wp_enqueue_style('normalize');
         wp_enqueue_style('fontawesome');
         wp_enqueue_style("googlefonts");
         wp_enqueue_style("fluidboxcss");
+        wp_enqueue_style('datetime-local-polyfill-css');
         wp_enqueue_style('mis_estilos');
         // REGISTRAR LOS  JS
         $google_maps_apikey = esc_html(get_option('lapizzeria_apikey'));
         wp_register_script('maps', 'https://maps.googleapis.com/maps/api/js?key='.$google_maps_apikey.'&callback=initMap',array(), '',true);
         wp_register_script('fluidboxjs',get_template_directory_uri() . '/js/jquery.fluidbox.min.js', array(), '2.0.5',true);
+        wp_register_script('datetime-local-polyfill-js',get_template_directory_uri() . '/js/datetime-local-polyfill.min.js', array(), '1.0',true);
+        wp_register_script('modernizer', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js', array(), '2.8.3',true);
         wp_register_script('scripts',get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0',true);
         //LLAMAR LOS JS
         wp_enqueue_script("maps");
         wp_enqueue_script("jquery");
+        wp_enqueue_script("jquery-ui-core");
         wp_enqueue_script("fluidboxjs");
+        wp_enqueue_script("modernizer");
+        wp_enqueue_script("datetime-local-polyfill-js");
         wp_enqueue_script("scripts");
 
         // FROM PHP TO JS

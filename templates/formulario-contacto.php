@@ -2,16 +2,16 @@
 <form class="reserva-contacto" method="post">
     <h2>Realiza una reservacion</h2>
     <div class="campo">
-        <input type="text" required name="nombre" placeholder="Nombre">
+        <input type="text"  name="nombre" placeholder="Nombre">
     </div>
     <div class="campo">
-        <input type="date" required name="fecha" placeholder="Fecha">
+        <input type="datetime-local"  name="fecha" placeholder="Fecha">
     </div>
     <div class="campo">
-        <input type="email" required name="email" placeholder="Email">
+        <input type="email"  name="email" placeholder="Email">
     </div>
     <div class="campo">
-        <input type="tel" required name="telefono" placeholder="Telefono">
+        <input type="tel"  name="telefono" placeholder="Telefono">
     </div>
     <div class="campo">
         <textarea name="mensaje" placeholder="Mensaje"></textarea>
