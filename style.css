@@ -1000,3 +1000,29 @@ section.ubicacion-reservacion .reserva-contacto textarea {
     border: 2px solid #f0f0ff;
     color: white;
 }
+
+
+/** SUBMENUS ***/
+
+.menu-sitio li.menu-item-has-children {
+    position: relative;
+    transition: 300ms;
+}
+
+.menu-sitio li.menu-item-has-children ul.sub-menu {
+    display: none;
+    transition: 450ms;
+    background-color: #ffefff;
+    border-radius: 3px;
+}
+
+.menu-sitio li.menu-item-has-children:hover ul.sub-menu {
+    display: block;
+    position: absolute;
+    z-index: 150;
+}
+
+.menu-sitio li.menu-item-has-children ul.sub-menu li {
+    display: inline-block;
+    width: 100%;
+}
