@@ -16,10 +16,16 @@ $(document).ready(function() {
             },
             dataType: 'json',
             success: function(response) {
-                console.log(response);
+                if (response.respuesta == 1) {
+                    $('[data-reservaciones="' + idRegistro + '"]')
+                        .parent()
+                        .parent()
+                        .remove();
+                    alert("Eliminado con exito");
+                }
             },
-            error: function(error) {
-                console.error(error);
+            error: function(xhr, status, error) {
+                alert("No se ha eliminado: " + xhr.responseText);
             }
         });
     });
