@@ -103,7 +103,7 @@
             echo "<table class='wp-list-table widefat striped'>";
                 echo "<thead>";
                     echo "<tr>";
-                        echo "<th class='manage-column'>ID</th> <th class='manage-column'>Nombre</th> <th class='manage-column'>Fecha</th> <th class='manage-column'>Correo</th> <th class='manage-column'>Telefono</th> <th class='manage-column'>Mensaje</th>";
+                        echo "<th class='manage-column'>ID</th> <th class='manage-column'>Nombre</th> <th class='manage-column'>Fecha</th> <th class='manage-column'>Correo</th> <th class='manage-column'>Telefono</th> <th class='manage-column'>Mensaje</th><th class='manage-column'>Acción</th>";
                     echo "</tr>";
                 echo "</thead>";
                 echo "<tbody>";
@@ -118,6 +118,7 @@
                             echo "<td>" . $row['correo'] . "</td>";
                             echo "<td>" . $row['telefono'] . "</td>";
                             echo "<td>" . $row['mensaje'] . "</td>";
+                            echo "<td><a class='borrar-registro' href='#' data-reservaciones='" . $row['id']."'>Eliminar</a></td>";
                         echo "</tr>";
                     }
                 echo "</tbody>";

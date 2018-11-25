@@ -48,6 +48,9 @@
         );
     }
 
+    /**
+     * Filtra el tag de un script y agrega atributos a la etiqueta
+     */
     function agregar_async_defer($tag,$handle){
         if('maps' !== $handle)
             return $tag;
@@ -78,6 +81,9 @@
         update_option('thumbnail_size_h',164);
     }
 
+    /**
+     * Habilita el cambio dinamico del logo y pone tamaños default
+     */
     function themename_custom_logo_setup() {
         $defaults = array(
             'height'      => 220,
@@ -85,7 +91,7 @@
         );
         add_theme_support( 'custom-logo', $defaults );
     }
-    add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+    
     
     /**
      * Agrega un custom post field, en el menu del wp admin
@@ -142,18 +148,27 @@
         ));
     }
 
+    /**
+     * Scrips para el backend de wordpress
+     */
+    function lapizzeria_admin_scripts(){
+        wp_enqueue_script('adminajax',get_template_directory_uri() . '/js/admin-ajax.js', array('jquery'), '1.0.0',true);
+    }
+
     /*************************
     ******** ACCIONES ********
     *************************/
     add_action('wp_enqueue_scripts','lapizzeria_styles');
     add_action('init','lapizzeria_menus');
     add_action('after_setup_theme','lapizzeria_setup');
-    //add_action('after_setup_theme','lapizzeria_custom_logo');
+    add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
     add_action( 'init', 'lapizzeria_especialidades' );
     add_action('widgets_init','lapizzeria_widgets');
     
     /* FILTROS*/
     add_filter('script_loader_tag', 'agregar_async_defer',10,2);
+    /*ADMIN*/
+    add_action('admin_enqueue_scripts' , 'lapizzeria_admin_scripts');
 
     /***************************
      ** ADVANCE CUSTOM FIELDS **
