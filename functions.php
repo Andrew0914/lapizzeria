@@ -31,9 +31,9 @@
         wp_register_script('fluidboxjs',get_template_directory_uri() . '/js/jquery.fluidbox.min.js', array(), '2.0.5',true);
         wp_register_script('scripts',get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0',true);
         //LLAMAR LOS JS
-        wp_enqueue_script("maps");
         wp_enqueue_script("jquery");
         wp_enqueue_script("fluidboxjs");
+        wp_enqueue_script("maps");
         wp_enqueue_script("scripts");
 
         // FROM PHP TO JS
@@ -69,6 +69,8 @@
      */
     function lapizzeria_setup(){
         add_theme_support("post-thumbnails");
+        add_theme_support('title-tag');
+
         add_image_size("nosotros",437 , 291, true);
         add_image_size("especialidades",768 , 515, true);
         add_image_size("especialidades-portrait",435 , 526, true);

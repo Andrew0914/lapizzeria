@@ -13,8 +13,6 @@
         <meta name="theme-color" content="#f19f30">
         <meta name="application-name" content="La pizzeria">
         <link rel="-icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/img/buscador.jpg">
-        
-        <title>La Pizzeria</title>
         <?php
             wp_head();
         ?>
