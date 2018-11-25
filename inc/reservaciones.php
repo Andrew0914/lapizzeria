@@ -40,7 +40,35 @@
     }
 
     /**
+     * Elimina una reservacion
+     */
+    function lapizzeria_eliminar(){
+        $respuesta = null;
+        if(isset($_POST['tipo'])){
+            if($_POST['tipo'] == 'eliminar'){
+                global $wpdb;
+                $tabla = $wpdb->prefix . 'reservaciones';
+                $id_registro = $_POST['id'];
+                // devuelve 1 si es exitoso, es una funcion nativa de wp
+                $resultado = $wpdb->delete($tabla, array('id' => $id_registro) , array('%d'));
+                if($resultado == 1){
+                    $respuesta = array(
+                        'respuesta'=> 1,
+                        'id'=>$id_registro
+                    );
+                }else{
+                    $respuesta = array('respuesta'=> 'error');
+                }
+            }
+        }
+        // cuando es comunicacion por ajax siempre debe ir un die() al final
+        die(json_encode($respuesta));
+    }
+
+    /**
      * Acciones
      */
     add_action('init','lapizzeria_guardar');
+    // via ajax
+    add_action('wp_ajax_lapizzeria_eliminar', 'lapizzeria_eliminar');
 ?>

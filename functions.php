@@ -153,6 +153,11 @@
      */
     function lapizzeria_admin_scripts(){
         wp_enqueue_script('adminajax',get_template_directory_uri() . '/js/admin-ajax.js', array('jquery'), '1.0.0',true);
+        //pasamos el URL de WP ajac al admin js
+        wp_localize_script('adminajax',
+             'url_eliminar',
+              array('ajaxurl' => admin_url('admin-ajax.php'))
+            );
     }
 
     /*************************
