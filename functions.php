@@ -163,6 +163,14 @@
             );
     }
 
+    /**
+     * Agrega elementos para el recapcha
+     */
+    function agregar_recaptcha(){
+        echo "<script src='https://www.google.com/recaptcha/api.js'></script>";
+    }
+    add_action('wp_head','agregar_recaptcha');
+
     /*************************
     ******** ACCIONES ********
     *************************/
